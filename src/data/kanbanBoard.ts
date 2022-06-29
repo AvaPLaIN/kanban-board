@@ -31,7 +31,7 @@ export const kanbanConfig = {
       ],
     },
     {
-      id: "123",
+      id: "1234",
       title: "ToDo",
       items: [
         {
