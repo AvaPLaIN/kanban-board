@@ -1,30 +1,52 @@
 export const kanbanConfig = {
-  id: "123",
-  title: "ToDo",
-  items: [
+  areas: [
     {
-      id: "kanbanBoard1",
-      createdAt: "1656520883",
-      createdBy: "admin",
-      assignedTo: "admin",
-      title: "Test Kanban Task is to test the item kan",
-      description:
-        "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-      priority: 4,
-      status: "todo",
-      tags: ["bug", "refactor"],
+      id: "123",
+      title: "ToDo",
+      items: [
+        {
+          id: "kanbanBoard1",
+          createdAt: "1656520883",
+          createdBy: "admin",
+          assignedTo: "admin",
+          title: "Test Kanban Task is to test the item kan",
+          description:
+            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+          priority: 4,
+          status: "todo",
+          tags: ["bug", "refactor"],
+        },
+        {
+          id: "kanbanBoard2",
+          createdAt: "1656520883",
+          createdBy: "admin",
+          assignedTo: "admin",
+          title: "awidjhaw awd awdrtc aw",
+          description:
+            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+          priority: 4,
+          status: "done",
+          tags: ["task", "feature"],
+        },
+      ],
     },
     {
-      id: "kanbanBoard2",
-      createdAt: "1656520883",
-      createdBy: "admin",
-      assignedTo: "admin",
-      title: "awidjhaw awd awdrtc aw",
-      description:
-        "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
-      priority: 4,
-      status: "done",
-      tags: ["task", "feature"],
+      id: "123",
+      title: "ToDo",
+      items: [
+        {
+          id: "kanbanBoard2",
+          createdAt: "1656520883",
+          createdBy: "admin",
+          assignedTo: "admin",
+          title: "awidjhaw awd awdrtc aw",
+          description:
+            "lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.",
+          priority: 4,
+          status: "done",
+          tags: ["task", "feature"],
+        },
+      ],
     },
   ],
 };

@@ -1,8 +1,8 @@
-import TaskArea from "./components/task-area/TaskArea";
+import TaskAreaList from "./components/task-area-list/TaskAreaList";
 import { kanbanConfig } from "./data/kanbanBoard";
 
 function App() {
-  return <TaskArea {...kanbanConfig} />;
+  return <TaskAreaList {...kanbanConfig} />;
 }
 
 export default App;
