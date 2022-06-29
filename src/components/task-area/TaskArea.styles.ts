@@ -9,6 +9,7 @@ export const TaskAreaContainer = styled.div`
   border-radius: 1rem;
   background-color: grey;
   min-height: 30rem;
+  width: 40rem;
 
   .header {
     .area-title {

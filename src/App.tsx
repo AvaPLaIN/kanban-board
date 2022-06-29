@@ -8,7 +8,6 @@ function App() {
 
   return (
     <div>
-      {filter.query}
       <Filter />
       <TaskAreaList {...kanbanConfig} />
     </div>

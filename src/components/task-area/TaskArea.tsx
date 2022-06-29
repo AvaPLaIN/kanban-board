@@ -1,3 +1,5 @@
+import useFilter from "../../context/useFilter";
+import filterByTitle from "../../utils/filter-by-title";
 import TaskItem from "../task-item";
 import { TaskAreaContainer } from "./TaskArea.styles";
 import { ITaskArea } from "./TaskArea.types";
@@ -5,7 +7,7 @@ import { ITaskArea } from "./TaskArea.types";
 const TaskArea = (props: ITaskArea) => {
   const { id, title, items } = props;
 
-  // TODO - add handle onChange title + edit area
+  const filter = useFilter();
 
   return (
     <TaskAreaContainer>
@@ -13,7 +15,7 @@ const TaskArea = (props: ITaskArea) => {
         <h2 className="area-title">{title}</h2>
       </div>
       <div className="items">
-        {items.map((item) => (
+        {filterByTitle(filter.query, items).map((item) => (
           <TaskItem key={item.id} {...item} />
         ))}
       </div>
