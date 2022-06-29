@@ -1,3 +1,5 @@
+import { ITaskItem } from "../task-item/TaskItem.types";
+
 export interface ITaskArea {
-  name: string;
+  items: ITaskItem[];
 }

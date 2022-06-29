@@ -13,6 +13,7 @@ const TaskItem = (props: ITaskItem) => {
     status,
     tags,
   } = props;
+
   return (
     <TaskItemContainer {...props}>
       <div className="header">
