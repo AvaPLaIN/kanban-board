@@ -1,4 +1,4 @@
-import TaskArea from "../task-area/TaskArea";
+import TaskArea from "../task-area";
 import { TaskAreaListContainer } from "./TaskAreaList.styles";
 import { ITaskAreaList } from "./TaskAreaList.types";
 
