@@ -7,14 +7,19 @@ const Filter = () => {
   return (
     <FilterContainer>
       <div className="general-search">
-        <input type="text" placeholder="Search" />
+        <input
+          type="text"
+          placeholder="Search"
+          value={filter.generalFilter}
+          onChange={(e) => filter.setGeneralFilter(e.target.value)}
+        />
       </div>
       <div className="title-search">
         <input
           type="text"
           placeholder="Title Search..."
-          value={filter.query}
-          onChange={(e) => filter.setQuery(e.target.value)}
+          value={filter.titleFilter}
+          onChange={(e) => filter.setTitleFilter(e.target.value)}
         />
       </div>
       <div className="assigned-search"></div>
