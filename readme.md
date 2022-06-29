@@ -2,4 +2,4 @@
 
 ### Project Preview
 
-kanban-board-avaplain.vercel.app
+https://kanban-board-avaplain.vercel.app
