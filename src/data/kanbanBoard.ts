@@ -1,4 +1,6 @@
 export const kanbanConfig = {
+  id: "123",
+  title: "ToDo",
   items: [
     {
       id: "kanbanBoard1",
