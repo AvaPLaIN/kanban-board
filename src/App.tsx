@@ -1,5 +1,8 @@
+import TaskItem from "./components/task-item/TaskItem";
+import { kanbanConfig } from "./data/kanbanBoard";
+
 function App() {
-  return <div></div>;
+  return <TaskItem {...kanbanConfig} />;
 }
 
 export default App;
