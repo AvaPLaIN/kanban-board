@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import useFilter from "../../context/useFilter";
 import filterByAll from "../../utils/filter-by-all";
 import filterByTitle from "../../utils/filter-by-title";
@@ -8,11 +8,18 @@ import { TaskAreaContainer } from "./TaskArea.styles";
 import { ITaskArea } from "./TaskArea.types";
 
 const TaskArea = (props: ITaskArea) => {
-  const { id, title, items } = props;
-  const filter = useFilter();
+  const {
+    id,
+    title,
+    items,
+    index: taskAreaIndex,
+    handleOnDragStart,
+    handleOnDragEnter,
+    handleOnDragOver,
+    handleOnDragEnd,
+  } = props;
 
-  const taskItemOnDragStartRef = useRef<number>(0);
-  const taskItemOnDragEnterRef = useRef<number>(0);
+  const filter = useFilter();
 
   const [filteredItems, setFilteredItems] = useState<ITaskItem[]>([]);
 
@@ -22,24 +29,8 @@ const TaskArea = (props: ITaskArea) => {
     setFilteredItems(newFilteredItems);
   }, [filter, items]);
 
-  const handleOnDragStart = (e: any, position: number) => {
-    taskItemOnDragStartRef.current = position;
-  };
-
-  const handleOnDragEnter = (e: any, position: number) => {
-    taskItemOnDragEnterRef.current = position;
-  };
-
-  const handleOnDragDrop = () => {
-    const newItems = [...filteredItems];
-    const itemToMove = newItems[taskItemOnDragStartRef.current];
-    newItems.splice(taskItemOnDragStartRef.current, 1);
-    newItems.splice(taskItemOnDragEnterRef.current, 0, itemToMove);
-    setFilteredItems(newItems);
-  };
-
   return (
-    <TaskAreaContainer>
+    <TaskAreaContainer onDragOver={() => handleOnDragOver(taskAreaIndex)}>
       <div className="header">
         <h2 className="area-title">{title}</h2>
       </div>
@@ -47,10 +38,10 @@ const TaskArea = (props: ITaskArea) => {
         {filteredItems.map((item, index) => (
           <div
             draggable
-            onDragStart={(e) => handleOnDragStart(e, index)}
-            onDragEnter={(e) => handleOnDragEnter(e, index)}
+            onDragStart={(e) => handleOnDragStart(taskAreaIndex, index)}
+            onDragEnter={() => handleOnDragEnter(index)}
             onDragOver={(e) => e.preventDefault()}
-            onDragEnd={handleOnDragDrop}
+            onDragEnd={handleOnDragEnd}
             key={item.id}
           >
             <TaskItem {...item} />

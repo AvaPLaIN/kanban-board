@@ -1,5 +1,6 @@
-import { ITaskArea } from "../task-area/TaskArea.types";
+import { TaskArea } from "../task-area/TaskArea.types";
 
 export interface ITaskAreaList {
-  areas: ITaskArea[];
+  areas: TaskArea[];
+  handleUpdateAreas: (areas: TaskArea[]) => void;
 }

@@ -23,5 +23,6 @@ export const TaskAreaContainer = styled.div`
     flex-direction: column;
     width: 100%;
     gap: 1rem;
+    height: 100%;
   }
 `;
