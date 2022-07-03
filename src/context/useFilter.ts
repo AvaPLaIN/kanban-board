@@ -1,6 +1,6 @@
 import create from "zustand";
 
-type Filter = {
+export type Filter = {
   titleFilter: string;
   setTitleFilter: (titleFilter: string) => void;
   resetTitleFilter: () => void;
