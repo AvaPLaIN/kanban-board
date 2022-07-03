@@ -1,7 +1,7 @@
 import { ITaskItem } from "../components/task-item/TaskItem.types";
 import { Filter } from "../context/useFilter";
-import filterByAll from "./filter/filter-by-all";
-import filterByTitle from "./filter/filter-by-title";
+import filterByAll from "./filters/filter-by-all";
+import filterByTitle from "./filters/filter-by-title";
 
 const generalFilter = (items: ITaskItem[], filters: Filter) => {
   if (!filters) return items;
